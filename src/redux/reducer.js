@@ -11,6 +11,11 @@ const initialState = {
 
 const todo = (state = initialState, action) => {
     switch (action.type) {
+        case 'ADD_TODO':
+            return {
+                ...state,
+                todos: [...state.todos, {title: action.payload, done: false}]
+            };
         default:
             return state;
     }
